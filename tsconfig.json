@@ -1,30 +1,25 @@
 {
-    "compilerOptions": {
-        // Settings for the compiler
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "target": "es2015",
-        "module": "ESNext",
-    
-        // Rules for your code
-        "strict": true,
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noUnusedParameters": true,
-        "noUnusedLocals": true,
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitOverride": true,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "sourceMap": true,
+    "target": "es2015",
+    "module": "ESNext",
 
-        // Settings for linking source files
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
+    // Rules for your code
+    "strict": false,
 
-    },
-    // Folder for your code
-    "include": [
-        "./src/**/*"
-    ]
+    // Settings for linking source files
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "files": [
+    "typings/tsd.d.ts"
+  ],
+  "include": [
+    "./src/**/*"
+ ]
 }

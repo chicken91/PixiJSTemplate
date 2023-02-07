@@ -1,0 +1,14 @@
+{
+    "gameName": "PIXI Game Template",
+
+    "server": {
+        "serverUrl": "",
+        "gameId": 123,
+        "playerId": "pixiPlayer001"
+    },
+
+    "soundMap": {
+        "CLICK_UI_SOUND": "sfx_clickAllOtherClicks",
+        "CLICK_STOP": "sfx_clickStop"
+    }
+}

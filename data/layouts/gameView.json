@@ -1,0 +1,5 @@
+{
+    "gameView": {"type": "Container", "bindId": "gameView", "children": [
+
+    ]}
+}

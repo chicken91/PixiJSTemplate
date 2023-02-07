@@ -1,0 +1,20 @@
+{
+  "resources": {
+    "images": [
+      {"id": "flower", "src": "/assets/images/flowerTop.png", "groups": ["initial"]}
+    ],
+
+    "sounds": [
+
+    ],
+
+    "spines": [
+      {"id": "boySpine", "dataUrl": "/assets/spines/boy/spineboy-pro.json", "src": "/assets/spines/boy/spineboy-pro.png", "groups": ["initial"]}
+    ],
+
+    "fonts": [
+      {"id": "Dragons", "fontUrl": "/assets/fonts/Dragons.woff", "groups": ["preload"]},
+      {"id": "DragonsC", "fontUrl": "/assets/fonts/DragonsC.woff", "groups": ["preload"]}
+    ]
+  }
+}

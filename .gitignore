@@ -1,4 +1,9 @@
-.vscode
-.cache
-dist
 node_modules
+package-lock.json
+dist
+bin
+.idea/
+/.vscode
+size-report.json
+data/config/.DS_Store
+.DS_Store
