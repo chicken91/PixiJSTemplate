@@ -1,4 +1,4 @@
-import { ServerRequestData } from "../../models/data/ServerRequestData";
+import { ServerRequestData } from "../../models/data/server/ServerRequestData";
 
 export interface StringReplacement {
     pattern: RegExp,

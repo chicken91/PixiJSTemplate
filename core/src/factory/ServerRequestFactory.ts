@@ -1,12 +1,12 @@
-import { InitRequest } from "../models/requestDto/InitRequest";
-import { AbstractRequest } from "../models/requestDto/AbstractRequest";
+import { InitRequestDTO } from "../models/data/server/requestDto/InitRequestDTO";
+import { AbstractRequestDTO } from "../models/data/server/requestDto/AbstractRequestDTO";
 import { ServerRequestType } from '../types/ServerRequestType';
-import { ServerRequestData } from "../models/data/ServerRequestData";
+import { ServerRequestData } from "../models/data/server/ServerRequestData";
 import { bind } from "./di/inject";
 
 @bind({singleton: true})
 export class ServerRequestFactory {
-    public getServerRequestData(request: ServerRequestData): AbstractRequest {
+    public getServerRequestData(request: ServerRequestData): AbstractRequestDTO {
         switch (request.type) {
             case ServerRequestType.INIT:
                 return this.createInitRequest();
@@ -15,7 +15,7 @@ export class ServerRequestFactory {
         }
     }
 
-    protected createInitRequest(): InitRequest {
-        return new InitRequest();
+    protected createInitRequest(): InitRequestDTO {
+        return new InitRequestDTO();
     }
 }

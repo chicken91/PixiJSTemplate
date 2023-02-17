@@ -1,7 +1,25 @@
 {
   "resources": {
     "images": [
-      {"id": "flower", "src": "/assets/images/flowerTop.png", "groups": ["initial"]}
+        {"id": "flower", "src": "/assets/images/flowerTop.png", "groups": ["initial"]},
+        {"id": "background", "src": "/assets/images/main_game_color_night.jpg", "groups": ["initial"]},
+        {"id": "spinButton", "src": "/assets/images/BTN_game_icon_spin.png", "groups": ["initial"]},
+        {"id": "reelBack", "src": "/assets/images/panel_base.png", "groups": ["initial"]},
+        {"id": "reelOverlay", "src": "/assets/images/reels.png", "groups": ["initial"]},
+        {"id": "symbol1", "src": "/assets/images/s1.png", "groups": ["initial"]},
+        {"id": "symbol2", "src": "/assets/images/s2.png", "groups": ["initial"]},
+        {"id": "symbol3", "src": "/assets/images/s3.png", "groups": ["initial"]},
+        {"id": "symbol4", "src": "/assets/images/s4.png", "groups": ["initial"]},
+        {"id": "symbol5", "src": "/assets/images/s5.png", "groups": ["initial"]},
+        {"id": "symbol6", "src": "/assets/images/s6.png", "groups": ["initial"]},
+        {"id": "symbol7", "src": "/assets/images/s7.png", "groups": ["initial"]},
+        {"id": "symbol8", "src": "/assets/images/s8.png", "groups": ["initial"]},
+        {"id": "symbol9", "src": "/assets/images/s9.png", "groups": ["initial"]},
+        {"id": "symbol10", "src": "/assets/images/s10.png", "groups": ["initial"]},
+        {"id": "uiBack", "src": "/assets/images/panel_down.png", "groups": ["initial"]},
+        {"id": "bottomSlotPanel", "src": "/assets/images/gm_down.png", "groups": ["initial"]},
+        {"id": "topSlotPanel", "src": "/assets/images/gm_trigger_up.png", "groups": ["initial"]},
+        {"id": "spinButtonMobile", "src": "/assets/images/buttons3.png", "groups": ["initial"]}
     ],
 
     "sounds": [
@@ -9,12 +27,11 @@
     ],
 
     "spines": [
-      {"id": "boySpine", "dataUrl": "/assets/spines/boy/spineboy-pro.json", "src": "/assets/spines/boy/spineboy-pro.png", "groups": ["initial"]}
+
     ],
 
     "fonts": [
-      {"id": "Dragons", "fontUrl": "/assets/fonts/Dragons.woff", "groups": ["preload"]},
-      {"id": "DragonsC", "fontUrl": "/assets/fonts/DragonsC.woff", "groups": ["preload"]}
+
     ]
   }
 }

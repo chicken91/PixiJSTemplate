@@ -1,14 +1,15 @@
-import { LayoutParser } from "../factory/layout/parsers/LayoutParser";
+import { LayoutParser } from "../factory/layout/LayoutParser";
 import { EventDispatcher } from "./EventDispatcher";
 import { bind, inject } from "../factory/di/inject";
-import { IView } from "../views/IView";
 import { Size } from "../models/data/Size";
-import { ScreenModel } from "../models/ScreenModel";
+import { ScreenModel } from "../models/game/ScreenModel";
 import { CoreEvents } from "../types/CoreEvents";
-import { RenderModel } from "../models/RenderModel";
+import { RenderModel } from "../models/game/RenderModel";
 import { CreationPriority } from "../factory/di/CreationPriority";
 import { ObjectView } from "../views/ObjectView";
-import { DisplayObject } from "pixi.js";
+import { Container } from "pixi.js";
+import { GameConfig } from "../models/GameConfig";
+import { GameModel } from "../models/GameModel";
 
 @bind({singleton: true, priority: CreationPriority.HIGH})
 export class SceneService {
@@ -17,7 +18,7 @@ export class SceneService {
     protected dispatcher: EventDispatcher = inject(EventDispatcher);
     protected screenModel: ScreenModel = inject(ScreenModel);
 
-    protected scenes: { [sceneId: string]: ObjectView<DisplayObject> } = {};
+    protected scenes: { [sceneId: string]: ObjectView<Container, GameModel<GameConfig>> } = {};
 
     constructor() {
         this.dispatcher.addListener(CoreEvents.ADD_SCENE, this.onSceneAdd.bind(this));
@@ -27,7 +28,7 @@ export class SceneService {
 
     protected onSceneAdd(sceneId: string): void {
         if (!this.scenes.hasOwnProperty(sceneId)) {
-            const scene: ObjectView<DisplayObject> = this.layoutParser.createFromLibrary(sceneId);
+            const scene = this.layoutParser.createFromLibrary(sceneId);
             this.scenes[sceneId] = scene;
             this.renderModel.rootContainer.addChildAt(scene.object, 0);
             this.onResize(this.screenModel.size);
@@ -37,7 +38,7 @@ export class SceneService {
 
     protected onSceneRemove(sceneId: string): void {
         if (this.scenes.hasOwnProperty(sceneId)) {
-            const scene: ObjectView<DisplayObject> = this.scenes[sceneId];
+            const scene = this.scenes[sceneId];
             this.renderModel.rootContainer.removeChild(scene.object);
             delete this.scenes[sceneId];
         }

@@ -1,7 +1,7 @@
 import { IState } from './IState';
 import { EventDispatcher } from '../../service/EventDispatcher';
 import { inject } from '../../factory/di/inject';
-import { IAction, IStateInfo } from '../core/IAction';
+import { IAction, IStateInfo } from '../IAction';
 import { IStateMachine } from "../../types/interface/IStateMachine";
 
 export abstract class AbstractState implements IState {

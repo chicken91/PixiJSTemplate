@@ -2,20 +2,21 @@ import { EventDispatcher } from "./EventDispatcher";
 import { bind, inject } from "../factory/di/inject";
 import { ServerRequestFactory } from "../factory/ServerRequestFactory";
 import { CoreEvents } from "../types/CoreEvents";
-import { AbstractRequest } from "../models/requestDto/AbstractRequest";
-import { ServerRequestData } from "../models/data/ServerRequestData";
+import { AbstractRequestDTO } from "../models/data/server/requestDto/AbstractRequestDTO";
+import { ServerRequestData } from "../models/data/server/ServerRequestData";
 import { IExtendedResponse, IResponse } from '../types/interface/CoreTypes';
 import { GameModel } from "../models/GameModel";
 import { CreationPriority } from "../factory/di/CreationPriority";
+import { GameConfig } from "../models/GameConfig";
 
 @bind({singleton: true, priority: CreationPriority.HIGH})
 export class ServerService {
     protected dispatcher: EventDispatcher = inject(EventDispatcher);
-    protected gameModel: GameModel = inject(GameModel);
+    protected gameModel: GameModel<GameConfig> = inject(GameModel);
     protected serverRequestFactory: ServerRequestFactory = inject(ServerRequestFactory);
     protected requestMap: { [requestId: number]: ServerRequestData } = {};
-    protected currentRequest: AbstractRequest | undefined;
-    protected requestQueue: Array<AbstractRequest> = [];
+    protected currentRequest: AbstractRequestDTO | undefined;
+    protected requestQueue: Array<AbstractRequestDTO> = [];
 
     constructor() {
         this.addListeners();
@@ -40,7 +41,7 @@ export class ServerService {
     }
 
     protected onServerRequest(serverRequestData: ServerRequestData): void {
-        let request: AbstractRequest = this.getRequestData(serverRequestData);
+        let request: AbstractRequestDTO = this.getRequestData(serverRequestData);
         this.addRequestCallback(request.id, serverRequestData);
         this.requestQueue.push(request);
         this.sendRequestFromQueue();
@@ -77,7 +78,7 @@ export class ServerService {
 
     }
 
-    protected getRequestData(serverRequest: ServerRequestData): AbstractRequest {
+    protected getRequestData(serverRequest: ServerRequestData): AbstractRequestDTO {
         const data = this.serverRequestFactory.getServerRequestData(serverRequest);
         return data;
     }

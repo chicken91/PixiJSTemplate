@@ -1,8 +1,9 @@
-import { Texture } from 'pixi.js';
+import { Texture } from "pixi.js";
+import { TextureCache } from "@pixi/utils";
 
 export class TextureUtils {
     public static getTexture(id: string): Texture {
-        const texture = PIXI.utils.TextureCache[id];
+        const texture = TextureCache[id];
         if (!texture) {
             console.error(`no texture for id ${id}`);
         }

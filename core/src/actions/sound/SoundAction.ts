@@ -1,12 +1,13 @@
 import { GameConfig } from '../../models/GameConfig';
 import { inject } from '../../factory/di/inject';
+import { GameModel } from "../../models/GameModel";
 
 export abstract class SoundAction {
-    protected gameConfig: GameConfig = inject(GameConfig);
     private _id!: string;
+    protected model: GameModel<GameConfig> = inject(GameModel);
 
     constructor(id: string, public type: string) {
-        this._id = this.gameConfig.getSoundId(id) || id;
+        this._id = this.model.config.getSoundId(id) || id;
     }
 
     public get id(): string {

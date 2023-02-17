@@ -1,0 +1,14 @@
+{
+    "UIView": {"type": "Container", "anchor":{"x": 0.5, "y": 0.5}, "position": {"x": 960, "y": 970}, "ratio": {"landscape": {"remove":  true}, "portrait": {"remove":  true}}, "children": [
+        {"type": "Container", "bindId": "spinButtonView", "children": [
+            {"id": "spinButton", "type": "Button", "position": {"x": 850, "y": -400}, "components": {
+                "normal" : {"type": "Sprite", "texture": "spinButton", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}},
+                "over" : {"type": "Sprite", "texture": "spinButton", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}},
+                "down" : {"type": "Sprite", "texture": "spinButton", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}, "scale": {"x": 0.95, "y": 0.95}},
+                "disable" : {"type": "Sprite", "texture": "spinButton", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}, "children": [
+                    {"type": "Graphics", "size": {"width": 175, "height": 171}, "position": {"x": 87, "y": 87}, "radius": 80, "color": "black", "alpha": 0.5}
+                ]}
+            }}
+        ]}
+    ]}
+}

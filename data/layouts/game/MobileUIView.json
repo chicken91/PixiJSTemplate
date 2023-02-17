@@ -1,0 +1,24 @@
+{
+    "MobileUIView": {"type": "Group", "fitType": "fit", "remove":  true, "ratio": {
+        "landscape": {"base":{"width": 1920, "height": 1080}, "rPos": {"x":1, "y": 0.5}, "anchor":{"x": 1, "y": 0.5}, "remove": false},
+        "portrait": {"base":{"width": 960, "height": 1920}, "rPos": {"x":0.5, "y": 1}, "anchor":{"x": 0.5, "y": 1}, "remove": false}},
+        "children": [
+            {"id": "resizeArea", "type": "ResizeArea", "ratio": {
+                "landscape": {"size": {"width": 1920, "height": 1080}},
+                "portrait": {"size": {"width": 1080, "height": 1920}}}, "position": {"x": 0, "y": 0}, "visible":  false},
+
+            {"type": "Container", "bindId": "spinButtonView", "children": [
+                {"id": "spinButton", "type": "Button", "ratio": {
+                    "landscape": {"position": {"x": 1740, "y": 540}},
+                    "portrait": {"position": {"x": 540, "y": 1600}}},
+                    "components": {
+                        "normal" : {"type": "Sprite", "texture": "spinButtonMobile", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}},
+                        "over" : {"type": "Sprite", "texture": "spinButtonMobile", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}},
+                        "down" : {"type": "Sprite", "texture": "spinButtonMobile", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}, "scale": {"x": 0.95, "y": 0.95}},
+                        "disable" : {"type": "Sprite", "texture": "spinButtonMobile", "position": {"x": 0, "y": 0}, "anchor":{"x":0.5, "y":0.5}, "children": [
+                            {"type": "Graphics", "size": {"width": 324, "height": 324}, "position": {"x": 162, "y": 162}, "radius": 162, "color": "black", "alpha": 0.5}
+                        ]}
+                    }}
+            ]}
+        ]}
+}

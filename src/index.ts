@@ -1,7 +1,7 @@
-import { TemplateActivator } from "./TemplateActivator";
+import { BOAActivator } from "./BOAActivator";
 
 export function activation(): void {
-    let activator = new TemplateActivator();
+    let activator = new BOAActivator();
     activator.activate();
 }
 

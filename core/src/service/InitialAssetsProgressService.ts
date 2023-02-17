@@ -1,6 +1,6 @@
 import { EventDispatcher } from "./EventDispatcher";
 import { bind, inject } from "../factory/di/inject";
-import { LoadModel } from "../models/LoadModel";
+import { LoadModel } from "../models/game/LoadModel";
 import { AbstractAssetData } from "../models/data/asset/AbstractAssetData";
 import { CoreEvents } from "../types/CoreEvents";
 import { CreationPriority } from "../factory/di/CreationPriority";

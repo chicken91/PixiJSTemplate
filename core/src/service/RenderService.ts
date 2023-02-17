@@ -1,9 +1,10 @@
 import { bind, inject } from "../factory/di/inject";
 import { CreationPriority } from "../factory/di/CreationPriority";
 import { CoreEvents } from "../types/CoreEvents";
-import { RenderModel } from "../models/RenderModel";
+import { RenderModel } from "../models/game/RenderModel";
 import { EventDispatcher } from "./EventDispatcher";
 import { Ticker } from "pixi.js";
+import { Group } from "tweedle.js";
 
 @bind({singleton: true, priority: CreationPriority.VERY_HIGH})
 export class RenderService {
@@ -34,6 +35,7 @@ export class RenderService {
 
     protected onRender() {
         this.renderModel.updateFPSMeter();
+        Group.shared.update();
         this.dispatcher.dispatch(CoreEvents.ON_RENDER);
     }
 

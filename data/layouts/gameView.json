@@ -1,5 +1,24 @@
 {
-    "gameView": {"type": "Container", "bindId": "gameView", "children": [
+    "gameView": {"type": "Container", "position": {"x": 0, "y": 0}, "children": [
+        {"type": "Group", "bindId": "gameView", "fitType": "fit", "rPos": {"x": 0.5, "y": 0.5}, "anchor":{"x": 0.5, "y": 0.5}, "base":{"width": 1920, "height": 1080}, "ratio": {
+            "landscape": {"base":{"width": 1920, "height": 1080}},
+            "portrait": {"base":{"width": 960, "height": 1920}}},
+            "children": [
+                {"id": "resizeArea", "type": "ResizeArea", "size": {"width": 1920, "height": 1080}, "position": {"x": 0, "y": 0}},
+                {"type": "Sprite", "texture": "background", "anchor":{"x":0.5, "y":0.5}, "position": {"x": 960, "y": 620}},
 
+                {"type": "Container", "bindId": "slotView", "anchor":{"x":0.5, "y":0.5}, "position": {"x": 960, "y": 480}, "mask": {"x": -100, "y": 0, "width": 1200, "height": 790}, "children": [
+                    {"type": "Container","bindId": "reelView", "props": {"reelId": 0}, "position": {"x": 0, "y": 0}},
+                    {"type": "Container","bindId": "reelView", "props": {"reelId": 1}, "position": {"x": 190, "y": 0}},
+                    {"type": "Container","bindId": "reelView", "props": {"reelId": 2}, "position": {"x": 380, "y": 0}},
+                    {"type": "Container","bindId": "reelView", "props": {"reelId": 3}, "position": {"x": 570, "y": 0}},
+                    {"type": "Container","bindId": "reelView", "props": {"reelId": 4}, "position": {"x": 760, "y": 0}}
+                ]},
+                {"type": "Sprite", "texture": "topSlotPanel", "anchor":{"x":0.5, "y":0.5}, "position": {"x": 957, "y": 30}},
+                {"type": "Sprite", "texture": "bottomSlotPanel", "anchor":{"x":0.5, "y":0.5}, "position": {"x": 910, "y": 960}},
+
+                {"libId": "UIView", "type": "Component"}
+            ]},
+        {"libId": "MobileUIView", "type": "Component"}
     ]}
 }

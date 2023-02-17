@@ -2,7 +2,7 @@ import { AbstractLoaderProvider } from "./AbstractLoaderProvider";
 import { AbstractSound } from "../../models/data/sound/AbstractSound";
 import { bind, inject } from "../../factory/di/inject";
 import { AssetsType } from "../../types/AssetsType";
-import { SoundModel } from "../../models/SoundModel";
+import { SoundModel } from "../../models/game/SoundModel";
 
 @bind()
 export abstract class AbstractSoundProvider extends AbstractLoaderProvider {

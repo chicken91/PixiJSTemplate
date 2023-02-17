@@ -1,8 +1,8 @@
 import { LoadUtils } from "../utils/LoadUtils";
-import { ISoundSprite } from "../models/data/sound/ISoundSprite";
+import { ISoundSprite } from "../models/data/sound/howler/ISoundSprite";
 import { AbstractSound } from "../models/data/sound/AbstractSound";
-import { HowlerSound } from "../models/data/sound/HowlerSound";
-import { IHowlerSoundResource } from "../models/data/sound/IHowlerSoundResource";
+import { HowlerSound } from "../models/data/sound/howler/HowlerSound";
+import { IHowlerSoundResource } from "../models/data/sound/howler/IHowlerSoundResource";
 import { AbstractSoundProvider } from "../service/providers/AbstractSoundProvider";
 import { Howl } from "howler";
 import { bind } from "./di/inject";

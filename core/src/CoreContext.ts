@@ -1,4 +1,6 @@
 import { Kernel } from "./factory/di/Kernel";
+import { UrlUtils } from "./utils/UrlUtils";
+import { CoreConstants } from "./types/constant/CoreConstants";
 
 export class CoreContext {
     private _isActivated: boolean;
@@ -24,7 +26,8 @@ export class CoreContext {
 
         this._kernel.activate();
 
-        console.log(`Binding classes ${this._classes}`);
+        if (__DEV__ && UrlUtils.getParameter(CoreConstants.urlParameters.debug) === "1")
+            console.log(`Binding classes ${this._classes.map(classFunction => classFunction.name)}`);
     }
 
     public addBindedClasses(classes: Array<Function>): void {

@@ -1,4 +1,4 @@
-import { LoadModel } from "../../LoadModel";
+import { LoadModel } from "../../game/LoadModel";
 import { AbstractLoaderProvider } from "../../../service/providers/AbstractLoaderProvider";
 import { IBaseResource } from "../../../types/interface/IBaseResource";
 
@@ -9,9 +9,9 @@ export abstract class AbstractAssetData {
     protected loaded: boolean = false;
     protected size: number = 0;
 
-    public load(): Promise<any> {
-        return this.loaderProvider.load()
-            .then(this.onAssetLoaded.bind(this));
+    public async load(): Promise<any> {
+        await this.loaderProvider.load();
+        return this.onAssetLoaded();
     }
 
     public setup(resourceData: IBaseResource, loadModel: LoadModel): void {
@@ -34,7 +34,7 @@ export abstract class AbstractAssetData {
 
     protected abstract initAssetSize(resourceData: IBaseResource): void;
 
-    protected onAssetLoaded(data: any): AbstractAssetData {
+    protected onAssetLoaded(): AbstractAssetData {
         this.loaded = true;
         if (this._resourceData.groups) {
             this.loadModel.decreaseAssetsGroupCount(this._resourceData.groups);

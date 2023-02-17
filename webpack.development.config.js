@@ -18,6 +18,10 @@ const devWebpackConfig = {
         open: true,
         client: {
             progress: true,
+            overlay: {
+                errors: true,
+                warnings: false,
+            }
         },
     }
 };

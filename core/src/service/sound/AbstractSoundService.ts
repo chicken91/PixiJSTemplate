@@ -6,7 +6,7 @@ import { inject } from "../../factory/di/inject";
 import { GlobalVolumeAction } from "../../actions/sound/GlobalVolumeAction";
 import { SoundVolumeAction } from "../../actions/sound/SoundVolumeAction";
 import { PlaySoundAction } from "../../actions/sound/PlaySoundAction";
-import { SoundModel } from "../../models/SoundModel";
+import { SoundModel } from "../../models/game/SoundModel";
 import { FadeSoundAction } from "../../actions/sound/FadeSoundAction";
 
 export abstract class AbstractSoundService {

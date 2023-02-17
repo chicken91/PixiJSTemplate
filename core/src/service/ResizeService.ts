@@ -1,7 +1,7 @@
 import { EventDispatcher } from "./EventDispatcher";
 import { bind, inject } from "../factory/di/inject";
 import { RenderService } from "./RenderService";
-import { ScreenModel } from "../models/ScreenModel";
+import { ScreenModel } from "../models/game/ScreenModel";
 import { CoreEvents } from "../types/CoreEvents";
 import { CoreConstants } from "../types/constant/CoreConstants";
 import { CreationPriority } from "../factory/di/CreationPriority";
@@ -37,7 +37,7 @@ export class ResizeService {
     }
 
     protected invokeResize(): void {
-        this.screenModel.setSize(window.innerWidth, window.innerHeight);
+        this.setScreenSize();
         this.renderManager.resizeCanvas(this.screenModel.size.width, this.screenModel.size.height);
         this.dispatcher.dispatch(CoreEvents.RESIZE, this.screenModel.size);
     }
@@ -95,6 +95,14 @@ export class ResizeService {
     protected onChangeFullScreen(fullscreen: boolean) {
         this.screenModel.changeFullScreenMode(fullscreen);
         this.dispatcher.dispatch(CoreEvents.FULL_SCREEN_CHANGED);
+    }
+
+    private setScreenSize(): void {
+        if (CoreConstants.deviceType.DESKTOP)
+            this.screenModel.setSize(window.innerWidth, window.innerHeight);
+        else
+            this.screenModel.setSize(window.screen.availWidth, window.screen.availHeight);
+
     }
 }
 

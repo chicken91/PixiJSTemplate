@@ -1,5 +1,5 @@
 {
-    "gameName": "PIXI Game Template",
+    "gameName": "Books Of Alladin",
 
     "server": {
         "serverUrl": "",
@@ -8,7 +8,35 @@
     },
 
     "soundMap": {
-        "CLICK_UI_SOUND": "sfx_clickAllOtherClicks",
-        "CLICK_STOP": "sfx_clickStop"
+        "CLICK_UI_SOUND": "",
+        "CLICK_STOP": ""
+    },
+
+    "slot": {
+        "behavior": "avalanche",
+        "spinTime": 1000,
+        "startSpinDelay": 50,
+        "stopSpinDelay": 100,
+        "spinSpeed": 45,
+        "cellSize": [190, 262],
+        "reels": [
+            {"id": 0, "direction": 1, "symbolCount": 3, "initialSymbols": [0, 1, 2], "drop": {"delay": 50}},
+            {"id": 1, "direction": 1, "symbolCount": 3, "initialSymbols": [3, 4, 5], "drop": {"delay": 50}},
+            {"id": 2, "direction": 1, "symbolCount": 3, "initialSymbols": [6, 7, 8], "drop": {"delay": 50}},
+            {"id": 3, "direction": 1, "symbolCount": 3, "initialSymbols": [5, 4, 3], "drop": {"delay": 50}},
+            {"id": 4, "direction": 1, "symbolCount": 3, "initialSymbols": [2, 1, 0], "drop": {"delay": 50}}
+        ],
+        "symbols": [
+            {"id": 0, "texture": "symbol1"},
+            {"id": 1, "texture": "symbol2"},
+            {"id": 2, "texture": "symbol3"},
+            {"id": 3, "texture": "symbol4"},
+            {"id": 4, "texture": "symbol5"},
+            {"id": 5, "texture": "symbol6"},
+            {"id": 6, "texture": "symbol7"},
+            {"id": 7, "texture": "symbol8"},
+            {"id": 8, "texture": "symbol9"},
+            {"id": 9, "texture": "symbol10", "offset": [33, 0]}
+        ]
     }
 }

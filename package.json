@@ -1,10 +1,11 @@
 {
-  "name": "pixi-slot-template",
+  "name": "books-of-alladin",
   "version": "0.0.1",
   "author": "Vitalik Kulishenko",
 
   "dependencies": {
     "pixi.js": "7.1.2",
+    "tweedle.js": "2.0.1",
     "eventemitter3": "5.0.0",
     "fpsmeter": "0.3.1",
     "gsap": "3.11.4",
@@ -41,13 +42,11 @@
   },
 
   "scripts": {
-    "buildProd": "gulp --env production && gulp --platform mobile --env production",
     "build": "gulp --platform desktop && gulp --platform mobile",
-    "copyData": "gulp copyData",
-    "buildLayouts": "gulp buildLayouts",
+    "buildProd": "gulp --env production && gulp --platform mobile --env production",
+    "assets": "gulp buildLayouts --platform desktop && gulp buildLayouts --platform mobile && gulp copyData",
     "start": "webpack-dev-server --config webpack.development.config.js",
     "lint": "tslint -t codeFrame -c ./core/data/lint/tslint.json 'src/**/*.ts'",
-    "fix": "tslint --fix -t codeFrame -c ./core/data/lint/tslint.json 'src/**/*.ts'",
-    "audio": "gulp audiosprite"
+    "fix": "tslint --fix -t codeFrame -c ./core/data/lint/tslint.json 'src/**/*.ts'"
   }
 }

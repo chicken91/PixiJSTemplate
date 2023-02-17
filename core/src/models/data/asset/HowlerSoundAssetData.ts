@@ -1,4 +1,4 @@
-import { IHowlerSoundResource } from "../sound/IHowlerSoundResource";
+import { IHowlerSoundResource } from "../sound/howler/IHowlerSoundResource";
 import { AbstractSoundAssetData } from "./AbstractSoundAssetData";
 import { HowlerSoundProvider } from "../../../factory/HowlerSoundProvider";
 

@@ -1,8 +1,8 @@
 import { CoreContext } from "./CoreContext";
 import { CoreLoader } from "./CoreLoader";
 import { inject } from "./factory/di/inject";
-import { StateMachineService } from "./service/StateMachineService";
-import { LoadConfigAction } from "./actions/LoadConfigAction";
+import { AbstractStateMachine } from "./actions/AbstractStateMachine";
+import { LoadConfigAction } from "../../src/actions/load/LoadConfigAction";
 import { DeviceUtils } from "./utils/DeviceUtils";
 
 
@@ -24,7 +24,7 @@ export class CoreActivator {
     }
 
     protected activateStateMachine(): void {
-        const stateMachine: StateMachineService = inject(StateMachineService);
+        const stateMachine: AbstractStateMachine = inject(AbstractStateMachine);
         stateMachine.activate();
     }
 
